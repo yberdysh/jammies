@@ -1,7 +1,7 @@
 {
-  "name": "boilermaker",
+  "name": "Jammies",
   "version": "1.0.0",
-  "description": "Some boilerplate code to get you started - get shakin'!",
+  "description": "A site that sells Jam!",
   "engines": {
     "node": ">= 7.0.0"
   },
