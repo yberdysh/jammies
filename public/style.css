@@ -19,3 +19,20 @@ form div {
   margin: 1em;
   display: inline-block;
 }
+
+
+/*.cards {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-between;
+}*/
+
+#single-product-card-container-img {
+  height: 265px;
+  width: 265px;
+}
+
+.single-product-card-container span {
+  font-family: sans-serif;
+  margin: 5px;
+}
