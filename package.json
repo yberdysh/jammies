@@ -51,6 +51,7 @@
     "prop-types": "^15.6.2",
     "react": "^16.4.2",
     "react-bootstrap": "^0.32.4",
+    "react-css-transition": "^0.7.4",
     "react-dom": "^16.4.2",
     "react-redux": "^5.0.2",
     "react-router-dom": "^4.3.1",

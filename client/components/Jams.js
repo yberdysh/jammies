@@ -24,7 +24,6 @@ export class Jams extends Component {
 }
 
 const mapStateToProps = state => {
-  console.log("STATE", state)
   return {
     allJams: state.jamReducer.allJams,
   }

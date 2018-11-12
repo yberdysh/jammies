@@ -1,58 +1,76 @@
 import React, { Component } from 'react';
 
-export class NavigationBar extends Component {
-  render() {
-    return (
-        <div className
-      ="navbar-wagon">
+export default class NavigationBar extends Component {
+  constructor(){
+    super()
+    this.state = {
+      isHide: true
+    }
+  }
+
+  handleScroll = (event) =>  {
+  console.log('the scroll things', event)
+};
+
+    // showBar = () => {
+    //   console.log("triggered")
+    //    const { isHide } = this.state
+    //    console.log("window.scrollY", window.scrollY)
+    //    window.scrollY > this.prev ?
+    //    !isHide && this.setState({ isHide: true })
+    //    :
+    //    isHide && this.setState({ isHide: false });
+
+    //    this.prev = window.scrollY;
+    //   this.setState({isHide: false})
+    // }
+
+
+
+componentDidMount = () => {
+   // hadling cover parallax
+    window.addEventListener('mousemove', this.handleMouseMove)
+}
+
+componentWillUnmount = () => {
+    window.removeEventListener('mousemove', this.handleMouseMove)
+}
+
+// handle onScroll event
+handleMouseMove = () => {
+  // e.stopPropogation()
+    // console.log(this.coverRef.current.height)
+    console.log("they see me rolling")
+    this.setState({isHide: false}, () => setTimeout(() => this.setState({isHide: true}), 5000))
+    // const wScroll = window.scrollY
+    // this.coverGradRef.current.style.cssText = `transform: translate(0px , -${wScroll/40}%)`
+    // console.log(window.scrollY)
+}
+
+    render(){
+      console.log("STATE Hide", this.state.isHide)
+      if (this.state.isHide){
+        return null
+      } else {
+        return (<div className="navbar">
           <a href="/" className
-        ="navbar-wagon-brand">
-            <img src="../public/jam-logo.png" alt="logo"/>
+        ="navbar-logo">
+            <img src="https://static.thenounproject.com/png/215294-200.png" alt="logo"/>
           </a>
 
 
           <div className
-        ="navbar-wagon-right hidden-xs hidden-sm">
+        ="navbar-right hidden-xs hidden-sm">
 
             <a href="" className
-          ="navbar-wagon-item navbar-wagon-link">Host</a>
+          ="navbar-item navbar-link">Login</a>
             <a href="" className
-          ="navbar-wagon-item navbar-wagon-link">Trips</a>
+          ="navbar-item navbar-link">Sign Up</a>
             <a href="" className
-          ="navbar-wagon-item navbar-wagon-link">Messages</a>
-
-
-            <div className
-          ="navbar-wagon-item">
-              <div className
-            ="dropdown">
-                <img src="https://kitt.lewagon.com/placeholder/users/ssaunier" className
-              ="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown"/>
-                <ul className
-              ="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-                  <li><a href="#">Profile</a></li>
-                  <li><a href="#">Dashboard</a></li>
-                  <li><a href="#">Log Out</a></li>
-                </ul>
-              </div>
-            </div>
+          ="navbar-item navbar-link">All Jams</a>
+            <button className="shopping-cart-btn">&#128722; Cart</button>
           </div>
-
-          <div className
-        ="navbar-wagon-item hidden-md hidden-lg">
-            <div className
-          ="dropdown">
-              <i className
-            ="fas fa-bars dropdown-toggle" data-toggle="dropdown" role="button"></i>
-              <ul className
-            ="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-                <li><a href="#">Host</a></li>
-                <li><a href="#">Trips</a></li>
-                <li><a href="#">Messagese</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-    );
-  }
+        </div>);
+}
+    }
 }
