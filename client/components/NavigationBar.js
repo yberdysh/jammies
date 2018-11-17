@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { CSSTransition, transit } from "react-css-transition";
 
 export default class NavigationBar extends Component {
   constructor(){
@@ -9,7 +10,7 @@ export default class NavigationBar extends Component {
   }
 
   handleScroll = (event) =>  {
-  console.log('the scroll things', event)
+  // console.log('the scroll things', event)
 };
 
     // showBar = () => {
@@ -29,18 +30,18 @@ export default class NavigationBar extends Component {
 
 componentDidMount = () => {
    // hadling cover parallax
-    window.addEventListener('mousemove', this.handleMouseMove)
+    window.addEventListener('scroll', this.handleMouseMove)
 }
 
 componentWillUnmount = () => {
-    window.removeEventListener('mousemove', this.handleMouseMove)
+    window.removeEventListener('scroll', this.handleMouseMove)
 }
 
 // handle onScroll event
 handleMouseMove = () => {
   // e.stopPropogation()
     // console.log(this.coverRef.current.height)
-    console.log("they see me rolling")
+    // console.log("they see me rolling")
     this.setState({isHide: false}, () => setTimeout(() => this.setState({isHide: true}), 5000))
     // const wScroll = window.scrollY
     // this.coverGradRef.current.style.cssText = `transform: translate(0px , -${wScroll/40}%)`
@@ -48,11 +49,12 @@ handleMouseMove = () => {
 }
 
     render(){
-      console.log("STATE Hide", this.state.isHide)
+      // console.log("STATE Hide", this.state.isHide)
       if (this.state.isHide){
-        return null
+        return <div></div>
       } else {
-        return (<div className="navbar">
+        return (<div className="navbar sticky">
+
           <a href="/" className
         ="navbar-logo">
             <img src="https://static.thenounproject.com/png/215294-200.png" alt="logo"/>

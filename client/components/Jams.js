@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React, {Component, Fragment} from 'react'
 import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
 import {fetchAllJams} from '../store'
@@ -12,13 +12,19 @@ export class Jams extends Component {
     this.props.getAllJams()
   }
 
-  renderAllJams(){
-    return this.props.allJams.map(jam => <JamCard key={jam.id} jam={jam}/>)
-  }
-
   render() {
+    console.log("PROPS", this.props)
     return (
-      <Banner />
+      <Fragment>
+        <Banner />
+        {this.props.allJams.length && <div className="allProducts">{this.props.allJams.map(jam => {
+          return (
+              <div key={jam.id}>
+                <JamCard jam={jam}/>
+              </div>
+            )
+        })}  </div> }
+      </Fragment>
       )
   }
 }
