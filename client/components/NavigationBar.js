@@ -42,7 +42,7 @@ handleMouseMove = () => {
   // e.stopPropogation()
     // console.log(this.coverRef.current.height)
     // console.log("they see me rolling")
-    this.setState({isHide: false}, () => setTimeout(() => this.setState({isHide: true}), 5000))
+    this.setState({isHide: false}, () => setTimeout(() => this.setState({isHide: true}), 10000))
     // const wScroll = window.scrollY
     // this.coverGradRef.current.style.cssText = `transform: translate(0px , -${wScroll/40}%)`
     // console.log(window.scrollY)
@@ -53,12 +53,13 @@ handleMouseMove = () => {
       if (this.state.isHide){
         return <div></div>
       } else {
-        return (<div className="navbar sticky">
-
+        return (<div className="navigation sticky">
+          <div>
           <a href="/" className
         ="navbar-logo">
             <img src="https://static.thenounproject.com/png/215294-200.png" alt="logo"/>
           </a>
+          </div>
 
 
           <div className

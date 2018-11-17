@@ -48,6 +48,66 @@ async function seed() {
       description: "This is a lovely jam",
       image: "https://i.etsystatic.com/17550118/r/il/1bf7fb/1483725448/il_570xN.1483725448_5nhk.jpg",
       numStars: 5
+    }),
+    Jam.create({
+      price: 15.99,
+      name: 'Power Jam',
+      numInStock: 0,
+      favorites: 0,
+      description: "This is a lovely jam",
+      reviews: 0,
+      image: "https://i.etsystatic.com/17550118/r/il/1bf7fb/1483725448/il_570xN.1483725448_5nhk.jpg",
+      numStars: 5
+    }),
+        Jam.create({
+      price: 15.99,
+      name: 'Power Jam',
+      numInStock: 0,
+      favorites: 0,
+      description: "This is a lovely jam",
+      reviews: 0,
+      image: "https://i.etsystatic.com/17550118/r/il/1bf7fb/1483725448/il_570xN.1483725448_5nhk.jpg",
+      numStars: 5
+    }),
+            Jam.create({
+      price: 15.99,
+      name: 'Power Jam',
+      numInStock: 0,
+      favorites: 0,
+      description: "This is a lovely jam",
+      reviews: 0,
+      image: "https://i.etsystatic.com/17550118/r/il/1bf7fb/1483725448/il_570xN.1483725448_5nhk.jpg",
+      numStars: 5
+    }),
+                Jam.create({
+      price: 15.99,
+      name: 'Power Jam',
+      numInStock: 0,
+      favorites: 0,
+      description: "This is a lovely jam",
+      reviews: 0,
+      image: "https://i.etsystatic.com/17550118/r/il/1bf7fb/1483725448/il_570xN.1483725448_5nhk.jpg",
+      numStars: 5
+    }),
+                    Jam.create({
+      price: 15.99,
+      name: 'Power Jam',
+      numInStock: 0,
+      favorites: 0,
+      description: "This is a lovely jam",
+      reviews: 0,
+      image: "https://i.etsystatic.com/17550118/r/il/1bf7fb/1483725448/il_570xN.1483725448_5nhk.jpg",
+      numStars: 5
+    }),
+                        Jam.create({
+      price: 15.99,
+      name: 'Power Jam',
+      numInStock: 0,
+      favorites: 0,
+      description: "This is a lovely jam",
+      reviews: 0,
+      image: "https://i.etsystatic.com/17550118/r/il/1bf7fb/1483725448/il_570xN.1483725448_5nhk.jpg",
+      numStars: 5
     })
     ])
 

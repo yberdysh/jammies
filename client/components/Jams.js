@@ -6,6 +6,7 @@ import { Grid, Menu } from 'semantic-ui-react'
 import {JamCard} from './JamCard'
 import {Banner} from './Banner'
 
+
 export class Jams extends Component {
 
   componentDidMount() {
