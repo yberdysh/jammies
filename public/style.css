@@ -54,12 +54,12 @@ form div {
 
 /*navbar*/
 /* Main navbar */
-.navbar {
+.navigation {
   box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
   background: white;
   transition: all 0.3s ease;
   height: 70px;
-  /*padding: 0px 30px;*/
+  padding: 0px 30px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -68,6 +68,7 @@ form div {
    border-bottom-left-radius: 5px;
    border-bottom-right-radius: 5px;
    transition-timing-function: ease;
+   transition-duration: 500ms;
    /*transition-timing-function: ease-out;*/
    /*border-radius: 15px;*/
 }
@@ -124,25 +125,24 @@ form div {
 
 /*card components*/
 .card {
-    height: 350px;
-  width: 350px;
-    font-family: 'Kurale';
+    height: 250px;
+  width: 250px;
   color: purple;
 }
 
 .card img {
-  height: 100px;
-  width: 100px;
+  height: 200px;
+  width: 200px;
 }
 
 div .allProducts {
   margin-top: 100px;
-  /*width: 100%;*/
+  width: 100%;
   display: flex;
-  /*text-align: center;*/
-  /*justify-content: center;*/
-  /*align-items: center;*/
-  /*flex-flow: row-wrap;*/
+  text-align: center;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-flow: row-wrap;
   flex-wrap: wrap;
   flex-direction: row;
 }
