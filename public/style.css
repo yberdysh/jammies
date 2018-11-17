@@ -59,17 +59,23 @@ form div {
   background: white;
   transition: all 0.3s ease;
   height: 70px;
-  padding: 0px 30px;
+  /*padding: 0px 30px;*/
   display: flex;
   align-items: center;
   justify-content: space-between;
    background-color: #EFF5FF;
+   /*transition-timing-function: linear;*/
+   border-bottom-left-radius: 5px;
+   border-bottom-right-radius: 5px;
+   transition-timing-function: ease;
+   /*transition-timing-function: ease-out;*/
    /*border-radius: 15px;*/
 }
 
 /* Logo */
 .navbar-logo img {
   height: 50px;
+  margin-left: 10px;
 }
 
 
@@ -84,6 +90,8 @@ form div {
 .navbar-item {
   cursor: pointer;
   padding: 0 20px;
+  padding-right: 20px;
+  /*transition-timing-function: ease;*/
 }
 
 /* Navbar link */
@@ -98,12 +106,45 @@ form div {
   text-decoration: none;
 }
 
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+
 .shopping-cart-btn {
   border-radius: 5px;
   color: #20657F;
   font-family: 'Roboto', cursive;
   /*color: #da552f;*/
+  margin-right: 20px;
 }
 
+
+/*card components*/
+.card {
+    height: 350px;
+  width: 350px;
+    font-family: 'Kurale';
+  color: purple;
+}
+
+.card img {
+  height: 100px;
+  width: 100px;
+}
+
+div .allProducts {
+  margin-top: 100px;
+  /*width: 100%;*/
+  display: flex;
+  /*text-align: center;*/
+  /*justify-content: center;*/
+  /*align-items: center;*/
+  /*flex-flow: row-wrap;*/
+  flex-wrap: wrap;
+  flex-direction: row;
+}
 
 
