@@ -14,7 +14,6 @@ export class Jams extends Component {
   }
 
   render() {
-    console.log("PROPS", this.props)
     return (
       <Fragment>
         <Banner />

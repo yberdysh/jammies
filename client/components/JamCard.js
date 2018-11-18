@@ -8,7 +8,6 @@ import { Card, Icon, Image } from 'semantic-ui-react'
 export class JamCard extends Component {
 
   render() {
-    console.log("what is jam", jam)
     const { jam } = this.props
     return (
       <Link to={`/jams/${jam.id}`}>

@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
+import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
-import {Signup} from './auth-form'
-import {Modal} from './Modal'
-import ReactDOM from "react-dom";
+import {Signup} from './auth-form';
+import {Modal} from './Modal';
+import {logout} from '../store'
 
-export default class NavigationBar extends Component {
+class NavigationBar extends Component {
   constructor(){
     super()
     this.state = {
@@ -64,8 +65,8 @@ handleScroll = () => {
             </a>
 
             <div className="navbar-right hidden-xs hidden-sm">
-              <a onClick={this.login} className="navbar-item navbar-link">Login</a>
-              <a onClick={this.signup} className="navbar-item navbar-link">Sign Up</a>
+              {this.props.isLoggedIn ? <a onClick={() => this.props.logout()} className="navbar-item navbar-link">Logout</a> : <a onClick={this.login} className="navbar-item navbar-link">Login</a>}
+              {this.props.isLoggedIn ? <a className="navbar-item navbar-link">Orders</a> : <a onClick={this.signup} className="navbar-item navbar-link">Sign Up</a>}
               <Link to="/jams" className="navbar-item navbar-link">All Jams</Link>
               <button type="button" className="shopping-cart-btn">&#128722; Cart</button>
             </div>
@@ -79,5 +80,17 @@ handleScroll = () => {
         }
     }
 }
+
+const mapStateToProps = state => {
+  return {
+    isLoggedIn: !!state.user.id
+  }
+}
+
+const mapDispatchToProps = dispatch => ({
+    logout: () => dispatch(logout())
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(NavigationBar)
 
 
