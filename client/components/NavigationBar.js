@@ -1,79 +1,70 @@
 import React, { Component } from 'react';
-import { CSSTransition, transit } from "react-css-transition";
+import {Link} from 'react-router-dom';
+import {Signup} from './auth-form'
+import {Modal} from './Modal'
+import ReactDOM from "react-dom";
 
 export default class NavigationBar extends Component {
   constructor(){
     super()
     this.state = {
-      isHide: true
+      isHide: false,
+      showTheModal: false
     }
   }
 
-  handleScroll = (event) =>  {
-  // console.log('the scroll things', event)
-};
+  showModal = () => {
+    console.log("triggered yo")
+    this.setState({ showTheModal: true });
+  };
 
-    // showBar = () => {
-    //   console.log("triggered")
-    //    const { isHide } = this.state
-    //    console.log("window.scrollY", window.scrollY)
-    //    window.scrollY > this.prev ?
-    //    !isHide && this.setState({ isHide: true })
-    //    :
-    //    isHide && this.setState({ isHide: false });
-
-    //    this.prev = window.scrollY;
-    //   this.setState({isHide: false})
-    // }
+  hideModal = () => {
+    this.setState({ showTheModal: false });
+  };
 
 
 
-componentDidMount = () => {
-   // hadling cover parallax
-    window.addEventListener('scroll', this.handleMouseMove)
-}
+// componentDidMount = () => {
+//     window.addEventListener('scroll', this.handleScroll)
+// }
 
-componentWillUnmount = () => {
-    window.removeEventListener('scroll', this.handleMouseMove)
-}
+// componentWillUnmount = () => {
+//     window.removeEventListener('scroll', this.handleScroll)
+// }
 
 // handle onScroll event
-handleMouseMove = () => {
-  // e.stopPropogation()
-    // console.log(this.coverRef.current.height)
-    // console.log("they see me rolling")
-    this.setState({isHide: false}, () => setTimeout(() => this.setState({isHide: true}), 10000))
-    // const wScroll = window.scrollY
-    // this.coverGradRef.current.style.cssText = `transform: translate(0px , -${wScroll/40}%)`
-    // console.log(window.scrollY)
-}
+// handleScroll = () => {
+//     this.setState({isHide: false}, () => setTimeout(() => this.setState({isHide: true}), 10000))
+// }
 
     render(){
-      // console.log("STATE Hide", this.state.isHide)
       if (this.state.isHide){
-        return <div></div>
+          return <div></div>
       } else {
-        return (<div className="navigation sticky">
-          <div>
-          <a href="/" className
-        ="navbar-logo">
-            <img src="https://static.thenounproject.com/png/215294-200.png" alt="logo"/>
-          </a>
+          return (
+            <div>
+            <a href="/" >
+              <img src="https://static.thenounproject.com/png/215294-200.png" alt="logo"/>
+            </a>
+
+            <div >
+              <a onClick={this.showModal} >Login</a>
+              <a href="" >Sign Up</a>
+              <a href="" >All Jams</a>
+              <button type="button" >&#128722; Cart</button>
+            </div>
+          {this.state.showTheModal &&
+            <Modal show={this.state.showTheModal} handleClose={this.hideModal}>
+              <p>Modal</p>
+              <p>Data</p>
+            </Modal>}
           </div>
-
-
-          <div className
-        ="navbar-right hidden-xs hidden-sm">
-
-            <a href="" className
-          ="navbar-item navbar-link">Login</a>
-            <a href="" className
-          ="navbar-item navbar-link">Sign Up</a>
-            <a href="" className
-          ="navbar-item navbar-link">All Jams</a>
-            <button className="shopping-cart-btn">&#128722; Cart</button>
-          </div>
-        </div>);
-}
+          );
+        }
     }
 }
+
+
+// const container = document.createElement("div");
+// document.body.appendChild(container);
+// ReactDOM.render(<NavigationBar />, container);
