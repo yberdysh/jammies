@@ -1,4 +1,5 @@
 import React from 'react';
+import {Signup} from './auth-form'
 
 export const Modal = ({ handleClose, show, children }) => {
   const showHideClassName = show ? "modal display-block" : "modal display-none";
@@ -7,8 +8,7 @@ export const Modal = ({ handleClose, show, children }) => {
   return (
     <div className={showHideClassName}>
       <section className="modal-main">
-      <h1>rendering modal</h1>
-        {children}
+      <Signup handleClose={handleClose}/>
         <button onClick={handleClose}>close</button>
       </section>
     </div>
