@@ -16,12 +16,16 @@ export default class NavigationBar extends Component {
   }
 
   showModal = () => {
-    console.log("triggered yo")
     this.setState({ showTheModal: true });
   };
 
-  hideModal = () => {
+  hideModal = (whichModal) => {
     this.setState({ showTheModal: false });
+    if (whichModal === "login"){
+      this.setState({login: false})
+    } else {
+      this.setState({signup: false})
+    }
   };
 
   login = () => {
@@ -29,10 +33,10 @@ export default class NavigationBar extends Component {
     this.showModal()
   }
 
-signup = () => {
-  this.setState({signup: true})
-  this.showModal()
-}
+  signup = () => {
+    this.setState({signup: true})
+    this.showModal()
+  }
 
 
 // componentDidMount = () => {
@@ -61,7 +65,7 @@ signup = () => {
             <div >
               <a onClick={this.login} >Login</a>
               <a onClick={this.signup} >Sign Up</a>
-              <a href="" >All Jams</a>
+              <Link to="/jams">All Jams</Link>
               <button type="button" >&#128722; Cart</button>
             </div>
           {this.state.showTheModal &&
