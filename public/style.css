@@ -26,6 +26,10 @@ form div {
 #app {
   margin: auto;
 }
+
+.welcome-page {
+  margin-top: 300px;
+}
 /*banner*/
 .banner {
   color: white;

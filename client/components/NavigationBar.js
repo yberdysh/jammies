@@ -8,7 +8,7 @@ export default class NavigationBar extends Component {
   constructor(){
     super()
     this.state = {
-      isHide: false,
+      isHide: true,
       showTheModal: false,
       signup: false,
       login: false
@@ -39,34 +39,35 @@ export default class NavigationBar extends Component {
   }
 
 
-// componentDidMount = () => {
-//     window.addEventListener('scroll', this.handleScroll)
-// }
+componentDidMount = () => {
+    window.addEventListener('scroll', this.handleScroll)
+}
 
-// componentWillUnmount = () => {
-//     window.removeEventListener('scroll', this.handleScroll)
-// }
+componentWillUnmount = () => {
+    window.removeEventListener('scroll', this.handleScroll)
+}
 
 // handle onScroll event
-// handleScroll = () => {
-//     this.setState({isHide: false}, () => setTimeout(() => this.setState({isHide: true}), 10000))
-// }
+handleScroll = () => {
+    this.setState({isHide: false})
+      // considering removing this set timeout due to modal dissappearing, () => setTimeout(() => this.setState({isHide: true}), 10000))
+}
 
     render(){
       if (this.state.isHide){
           return <div></div>
       } else {
           return (
-            <div>
-            <a href="/" >
+            <div className="navigation sticky">
+            <a href="/" className="navbar-logo">
               <img src="https://static.thenounproject.com/png/215294-200.png" alt="logo"/>
             </a>
 
-            <div >
-              <a onClick={this.login} >Login</a>
-              <a onClick={this.signup} >Sign Up</a>
-              <Link to="/jams">All Jams</Link>
-              <button type="button" >&#128722; Cart</button>
+            <div className="navbar-right hidden-xs hidden-sm">
+              <a onClick={this.login} className="navbar-item navbar-link">Login</a>
+              <a onClick={this.signup} className="navbar-item navbar-link">Sign Up</a>
+              <Link to="/jams" className="navbar-item navbar-link">All Jams</Link>
+              <button type="button" className="shopping-cart-btn">&#128722; Cart</button>
             </div>
           {this.state.showTheModal &&
             <Modal login={this.state.login} signup={this.state.signup} show={this.state.showTheModal} handleClose={this.hideModal}>
@@ -80,6 +81,3 @@ export default class NavigationBar extends Component {
 }
 
 
-// const container = document.createElement("div");
-// document.body.appendChild(container);
-// ReactDOM.render(<NavigationBar />, container);
