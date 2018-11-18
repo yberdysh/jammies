@@ -9,7 +9,9 @@ export default class NavigationBar extends Component {
     super()
     this.state = {
       isHide: false,
-      showTheModal: false
+      showTheModal: false,
+      signup: false,
+      login: false
     }
   }
 
@@ -22,6 +24,15 @@ export default class NavigationBar extends Component {
     this.setState({ showTheModal: false });
   };
 
+  login = () => {
+    this.setState({login: true})
+    this.showModal()
+  }
+
+signup = () => {
+  this.setState({signup: true})
+  this.showModal()
+}
 
 
 // componentDidMount = () => {
@@ -48,13 +59,13 @@ export default class NavigationBar extends Component {
             </a>
 
             <div >
-              <a onClick={this.showModal} >Login</a>
-              <a href="" >Sign Up</a>
+              <a onClick={this.login} >Login</a>
+              <a onClick={this.signup} >Sign Up</a>
               <a href="" >All Jams</a>
               <button type="button" >&#128722; Cart</button>
             </div>
           {this.state.showTheModal &&
-            <Modal show={this.state.showTheModal} handleClose={this.hideModal}>
+            <Modal login={this.state.login} signup={this.state.signup} show={this.state.showTheModal} handleClose={this.hideModal}>
               <p>Modal</p>
               <p>Data</p>
             </Modal>}

@@ -1,15 +1,15 @@
 import React from 'react';
-import {Signup} from './auth-form'
+import {Signup, Login} from './auth-form'
 
-export const Modal = ({ handleClose, show, children }) => {
+export const Modal = ({ handleClose, show, signup, login }) => {
   const showHideClassName = show ? "modal display-block" : "modal display-none";
-  console.log("show", show)
 
   return (
     <div className={showHideClassName}>
       <section className="modal-main">
-      <Signup handleClose={handleClose}/>
-        <button onClick={handleClose}>close</button>
+      {signup && <Signup handleClose={handleClose}/>}
+      {login && <Login handleClose={handleClose}/>}
+        <button type="button" onClick={handleClose}>close</button>
       </section>
     </div>
   );
