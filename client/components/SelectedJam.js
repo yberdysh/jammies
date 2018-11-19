@@ -7,11 +7,13 @@ export class SelectedJam extends Component {
       const jamId = this.props.match.params.id
       this.props.fetchSingleJam(jamId)
     }
+
     render(){
-    // console.log("selectedJam", selectedJam)
+      const {selectedJam} = this.props
       return (
         <div className="selectedJam">
-          <h1>{this.props.selectedJam.name}</h1>
+          <h1>{selectedJam.name}</h1>
+          <img src={selectedJam.image} alt=""/>
         </div>
       );
     }
