@@ -17,6 +17,7 @@ export class Jams extends Component {
     return (
       <Fragment>
         <Banner />
+        <div className="container">
         {this.props.allJams.length && <div className="allProducts">{this.props.allJams.map(jam => {
           return (
               <div key={jam.id}>
@@ -24,6 +25,7 @@ export class Jams extends Component {
               </div>
             )
         })}  </div> }
+        </div>
       </Fragment>
       )
   }
