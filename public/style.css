@@ -9,6 +9,10 @@ a {
   text-decoration: none;
 }
 
+span {
+  text-decoration: none;
+}
+
 label {
   display: block;
 }
@@ -126,14 +130,18 @@ form div {
 
 /*card components*/
 .card {
-    height: 250px;
+  height: 250px;
   width: 250px;
   color: purple;
+  margin-bottom: 10px;
+  text-align: left;
+  text-decoration: none;
 }
 
 .card img {
   height: 200px;
-  width: 200px;
+  width: 250px;
+  border-radius: 10px;
 }
 
 div .allProducts {

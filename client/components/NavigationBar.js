@@ -65,8 +65,8 @@ handleScroll = () => {
             </a>
 
             <div className="navbar-right hidden-xs hidden-sm">
-              {this.props.isLoggedIn ? <a onClick={() => this.props.logout()} className="navbar-item navbar-link">Logout</a> : <Link to="/login"><span onClick={this.login} className="navbar-item navbar-link">Login</span></Link>}
-              {this.props.isLoggedIn ? <a className="navbar-item navbar-link">Orders</a> : <Link to="/signup"><span onClick={this.signup} className="navbar-item navbar-link">Sign Up</span></Link>}
+              {this.props.isLoggedIn ? <a onClick={() => this.props.logout()} className="navbar-item navbar-link">Logout</a> : <Link to="/login" onClick={this.login} className="navbar-item navbar-link">Login</Link>}
+              {this.props.isLoggedIn ? <a className="navbar-item navbar-link">Orders</a> : <Link to="/signup" onClick={this.signup} className="navbar-item navbar-link">Sign Up</Link>}
               <Link to="/jams" className="navbar-item navbar-link">All Jams</Link>
               <button type="button" className="shopping-cart-btn">&#128722; Cart</button>
             </div>

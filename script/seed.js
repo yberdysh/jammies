@@ -37,8 +37,8 @@ async function seed() {
       name: 'A Bit of Heaven',
       numInStock: 0,
       favorites: 0,
-      description: "This is a lovely jam",
-      image: "https://i.etsystatic.com/17550118/r/il/1bf7fb/1483725448/il_570xN.1483725448_5nhk.jpg",
+      description: "My classic Strawberry Jam starts with fresh, ripe strawberries, cooked in its own juices to jam perfection, and canned in my health department-approved kitchen. \n Ingredients include: Strawberries, lemon juice, sugar, pectin. Your order is for one half-pint jar of delicious home-canned goodness.",
+      image: "http://kuking.net/resize/197/600/w/uploads/content/1403500357.jpg",
       reviews: 0,
       numStars: 5
     }),

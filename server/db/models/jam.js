@@ -26,7 +26,7 @@ const Jam = db.define('jam', {
     defaultValue: 0
   },
   description: {
-    type: Sequelize.STRING,
+    type: Sequelize.TEXT,
     notEmpty: true,
     notNull: true
   },
