@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 export class Banner extends Component {
   smoothScroll = () => {
     document.querySelector('.container').scrollIntoView({
+      block: "sart",
       behavior: 'smooth'
     });
   }
