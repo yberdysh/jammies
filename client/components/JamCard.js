@@ -1,15 +1,18 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux'
+// import { Card, Image } from 'semantic-ui-react';
 import {Link} from 'react-router-dom'
 import { Card, Image } from 'semantic-ui-react'
-import {fetchSingleJam} from '../store'
 // import {Grid, Col, Row} from 'react-bootstrap'
 
-const JamCard = ({getSingleJam, jam}) => {
+export class JamCard extends Component {
+
+  render() {
+    const { jam } = this.props
     return (
       <Card>
         <Link to={`/jams/${jam.id}`}>
-          <Image onClick={() => getSingleJam(jam.id)} src={jam.image} />
+          <Image src={jam.image} />
         </Link>
           <Card.Content>
             <Card.Header>{jam.name}</Card.Header>
@@ -18,9 +21,5 @@ const JamCard = ({getSingleJam, jam}) => {
         </Card>
     )
   }
+}
 
-const mapDispatchToProps = (dispatch) => ({
-  getSingleJam: (jamId) => dispatch(fetchSingleJam(jamId))
-})
-
-export default connect(null, mapDispatchToProps)(JamCard)

@@ -34,6 +34,10 @@ form div {
 .welcome-page {
   margin-top: 300px;
 }
+
+.selectedJam {
+  margin-top: 70px;
+}
 /*banner*/
 .banner {
   color: white;

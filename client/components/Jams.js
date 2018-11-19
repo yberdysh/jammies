@@ -1,3 +1,4 @@
+
 import React, {Component, Fragment} from 'react'
 import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
@@ -33,13 +34,13 @@ export class Jams extends Component {
 
 const mapStateToProps = state => {
   return {
-    allJams: state.jamReducer.allJams
+    allJams: state.jamReducer.allJams,
   }
 }
 
 const mapDispatchToProps = dispatch => {
   return {
-    getAllJams: () => dispatch(fetchAllJams()),
+    getAllJams: () => dispatch(fetchAllJams())
   }
 }
 

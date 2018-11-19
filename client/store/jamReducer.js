@@ -7,7 +7,7 @@ const GET_SINGLE_JAM = 'GET_SINGLE_JAM'
 //Initial State
 export const initialJams = {
   allJams: [],
-  selectedProduct: {}
+  selectedJam: {}
 }
 
 //Action Creators

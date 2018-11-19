@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 import {connect} from 'react-redux';
 
 const SelectedJam = ({selectedJam}) => {
-  console.log("selectedJam", selectedJam)
+    console.log("selectedJam", selectedJam)
     return (
-      <div>1Love</div>
+      <div className="selectedJam">1Love</div>
     );
-}
+  }
 
 const mapStateToProps = (state) => ({
   selectedJam: state.jamReducer.selectedJam
