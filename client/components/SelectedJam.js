@@ -1,9 +1,15 @@
 import React, { Component } from 'react';
+import {connect} from 'react-redux';
 
-export default class SelectedJam extends Component {
-  render() {
+const SelectedJam = ({selectedJam}) => {
+  console.log("selectedJam", selectedJam)
     return (
       <div>1Love</div>
     );
-  }
 }
+
+const mapStateToProps = (state) => ({
+  selectedJam: state.jamReducer.selectedJam
+})
+
+export default connect(mapStateToProps)(SelectedJam)

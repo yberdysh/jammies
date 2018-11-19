@@ -33,13 +33,13 @@ export class Jams extends Component {
 
 const mapStateToProps = state => {
   return {
-    allJams: state.jamReducer.allJams,
+    allJams: state.jamReducer.allJams
   }
 }
 
 const mapDispatchToProps = dispatch => {
   return {
-    getAllJams: () => dispatch(fetchAllJams())
+    getAllJams: () => dispatch(fetchAllJams()),
   }
 }
 
