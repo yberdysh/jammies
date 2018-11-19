@@ -7,7 +7,6 @@ import {auth} from '../store'
  * COMPONENT
  */
 const AuthForm = props => {
-  console.log("props in authform", props)
   const {name, displayName, handleSubmit, error, handleClose} = props
 
   return (

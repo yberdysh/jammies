@@ -13,7 +13,7 @@ const Jam = db.define('jam', {
     type: Sequelize.STRING,
     notNull: true,
     notEmpty: true,
-    validate: { len: [5,32] }
+    validate: { len: [3, 50] }
   },
   numInStock: {
     type: Sequelize.INTEGER,

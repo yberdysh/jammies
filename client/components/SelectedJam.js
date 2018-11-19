@@ -14,6 +14,7 @@ export class SelectedJam extends Component {
         <div className="selectedJam">
           <h1>{selectedJam.name}</h1>
           <img src={selectedJam.image} alt=""/>
+          <p>{selectedJam.description}</p>
         </div>
       );
     }
