@@ -1,79 +1,96 @@
 import React, { Component } from 'react';
-import { CSSTransition, transit } from "react-css-transition";
+import {connect} from 'react-redux';
+import {Link} from 'react-router-dom';
+import {Signup} from './auth-form';
+import {Modal} from './Modal';
+import {logout} from '../store'
 
-export default class NavigationBar extends Component {
+class NavigationBar extends Component {
   constructor(){
     super()
     this.state = {
-      isHide: true
+      isHide: true,
+      showTheModal: false,
+      signup: false,
+      login: false
     }
   }
 
-  handleScroll = (event) =>  {
-  // console.log('the scroll things', event)
-};
+  showModal = () => {
+    this.setState({ showTheModal: true });
+  };
 
-    // showBar = () => {
-    //   console.log("triggered")
-    //    const { isHide } = this.state
-    //    console.log("window.scrollY", window.scrollY)
-    //    window.scrollY > this.prev ?
-    //    !isHide && this.setState({ isHide: true })
-    //    :
-    //    isHide && this.setState({ isHide: false });
+  hideModal = (whichModal) => {
+    this.setState({ showTheModal: false });
+    if (whichModal === "login"){
+      this.setState({login: false})
+    } else {
+      this.setState({signup: false})
+    }
+  };
 
-    //    this.prev = window.scrollY;
-    //   this.setState({isHide: false})
-    // }
+  login = () => {
+    this.setState({login: true})
+    this.showModal()
+  }
 
+  signup = () => {
+    this.setState({signup: true})
+    this.showModal()
+  }
 
 
 componentDidMount = () => {
-   // hadling cover parallax
-    window.addEventListener('scroll', this.handleMouseMove)
+    window.addEventListener('scroll', this.handleScroll)
 }
 
 componentWillUnmount = () => {
-    window.removeEventListener('scroll', this.handleMouseMove)
+    window.removeEventListener('scroll', this.handleScroll)
 }
 
 // handle onScroll event
-handleMouseMove = () => {
-  // e.stopPropogation()
-    // console.log(this.coverRef.current.height)
-    // console.log("they see me rolling")
-    this.setState({isHide: false}, () => setTimeout(() => this.setState({isHide: true}), 10000))
-    // const wScroll = window.scrollY
-    // this.coverGradRef.current.style.cssText = `transform: translate(0px , -${wScroll/40}%)`
-    // console.log(window.scrollY)
+handleScroll = () => {
+    this.setState({isHide: false})
+      // considering removing this set timeout due to modal dissappearing, () => setTimeout(() => this.setState({isHide: true}), 10000))
 }
 
     render(){
-      // console.log("STATE Hide", this.state.isHide)
       if (this.state.isHide){
-        return <div></div>
+          return <div></div>
       } else {
-        return (<div className="navigation sticky">
-          <div>
-          <a href="/" className
-        ="navbar-logo">
-            <img src="https://static.thenounproject.com/png/215294-200.png" alt="logo"/>
-          </a>
+          return (
+            <div className="navigation sticky">
+            <a href="/" className="navbar-logo">
+              <img src="https://static.thenounproject.com/png/215294-200.png" alt="logo"/>
+            </a>
+
+            <div className="navbar-right hidden-xs hidden-sm">
+              {this.props.isLoggedIn ? <a onClick={() => this.props.logout()} className="navbar-item navbar-link">Logout</a> : <Link to="/login"><span onClick={this.login} className="navbar-item navbar-link">Login</span></Link>}
+              {this.props.isLoggedIn ? <a className="navbar-item navbar-link">Orders</a> : <Link to="/signup"><span onClick={this.signup} className="navbar-item navbar-link">Sign Up</span></Link>}
+              <Link to="/jams" className="navbar-item navbar-link">All Jams</Link>
+              <button type="button" className="shopping-cart-btn">&#128722; Cart</button>
+            </div>
+          {this.state.showTheModal &&
+            <Modal login={this.state.login} signup={this.state.signup} show={this.state.showTheModal} handleClose={this.hideModal}>
+              <p>Modal</p>
+              <p>Data</p>
+            </Modal>}
           </div>
-
-
-          <div className
-        ="navbar-right hidden-xs hidden-sm">
-
-            <a href="" className
-          ="navbar-item navbar-link">Login</a>
-            <a href="" className
-          ="navbar-item navbar-link">Sign Up</a>
-            <a href="" className
-          ="navbar-item navbar-link">All Jams</a>
-            <button className="shopping-cart-btn">&#128722; Cart</button>
-          </div>
-        </div>);
-}
+          );
+        }
     }
 }
+
+const mapStateToProps = state => {
+  return {
+    isLoggedIn: !!state.user.id
+  }
+}
+
+const mapDispatchToProps = dispatch => ({
+    logout: () => dispatch(logout())
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(NavigationBar)
+
+

@@ -7,11 +7,12 @@ import {auth} from '../store'
  * COMPONENT
  */
 const AuthForm = props => {
-  const {name, displayName, handleSubmit, error} = props
+  console.log("props in authform", props)
+  const {name, displayName, handleSubmit, error, handleClose} = props
 
   return (
     <div>
-      <form onSubmit={handleSubmit} name={name}>
+      <form onSubmit={(evt) => handleSubmit(evt, handleClose)} name={name}>
         <div>
           <label htmlFor="email">
             <small>Email</small>
@@ -59,12 +60,13 @@ const mapSignup = state => {
 
 const mapDispatch = dispatch => {
   return {
-    handleSubmit(evt) {
+     handleSubmit(evt, handleClose) {
       evt.preventDefault()
       const formName = evt.target.name
       const email = evt.target.email.value
       const password = evt.target.password.value
       dispatch(auth(email, password, formName))
+      .then(() => handleClose())
     }
   }
 }
