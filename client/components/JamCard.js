@@ -23,5 +23,3 @@ export class JamCard extends Component {
   }
 }
 
-
-

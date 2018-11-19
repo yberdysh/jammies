@@ -7,7 +7,7 @@ const GET_SINGLE_JAM = 'GET_SINGLE_JAM'
 //Initial State
 export const initialJams = {
   allJams: [],
-  selectedProduct: {}
+  selectedJam: {}
 }
 
 //Action Creators
@@ -28,7 +28,7 @@ export const fetchAllJams = () => async dispatch => {
 }
 
 export const fetchSingleJam = jamId => async dispatch => {
-  const res = await axios.get(`/api/products/${jamId}`)
+  const res = await axios.get(`/api/jams/${jamId}`)
   const jam = res.data
   dispatch(getSingleJam(jam))
 }
