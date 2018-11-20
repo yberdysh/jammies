@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { Router, Route, browserHistory, IndexRoute} from 'react-router';
+import {syncHistoryWithStore, routerReducer} from 'react-router-redux'
 import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
 import {Signup} from './auth-form';
@@ -41,6 +43,12 @@ class NavigationBar extends Component {
 
 
 componentDidMount = () => {
+    // if (this.props.match.path === "/jams"){
+    //   this.setState({isHide: true})
+    // } else {
+    //   this.setState({isHide: false})
+    // }
+    // use this instead: window.location.href
     window.addEventListener('scroll', this.handleScroll)
 }
 
@@ -50,7 +58,14 @@ componentWillUnmount = () => {
 
 // handle onScroll event
 handleScroll = () => {
-    this.setState({isHide: false})
+    if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+        this.setState({isHide: false})
+    } else {
+        this.setState({isHide: true})
+    }
+  // console.log(this.state.isHide)
+  //   const hidden = this.state.isHide
+  //   this.setState({isHide: !hidden})
       // considering removing this set timeout due to modal dissappearing, () => setTimeout(() => this.setState({isHide: true}), 10000))
 }
 
