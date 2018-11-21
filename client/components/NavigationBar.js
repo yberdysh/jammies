@@ -79,9 +79,9 @@ handleScroll = () => {
               <img src="https://static.thenounproject.com/png/215294-200.png" alt="logo"/>
             </a>
 
-            <div className="navbar-right hidden-xs hidden-sm">
-              {this.props.isLoggedIn ? <a onClick={() => this.props.logout()} className="navbar-item navbar-link">Logout</a> : <Link to="/login" onClick={this.login} className="navbar-item navbar-link">Login</Link>}
-              {this.props.isLoggedIn ? <a className="navbar-item navbar-link">Orders</a> : <Link to="/signup" onClick={this.signup} className="navbar-item navbar-link">Sign Up</Link>}
+            <div className="navbar-right">
+              {this.props.isLoggedIn ? <a onClick={() => this.props.logout()} className="navbar-item navbar-link">Logout</a> : <a onClick={this.login} className="navbar-item navbar-link">Login</a>}
+              {this.props.isLoggedIn ? <a className="navbar-item navbar-link">Orders</a> : <a onClick={this.signup} className="navbar-item navbar-link">Sign Up</a>}
               <Link to="/jams" className="navbar-item navbar-link">All Jams</Link>
               <button type="button" className="shopping-cart-btn">&#128722; Cart</button>
             </div>

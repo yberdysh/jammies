@@ -2,7 +2,8 @@
 body {
   font-family: sans-serif;
   margin: auto;
-  background-color: #F5F5F5;
+  /*background-color: #F5F5F5;*/
+  background-color: #AA9390;
 }
 
 a {
@@ -37,9 +38,15 @@ form div {
 
 .browse-button {
   background-color: #8B1D2B;
+  color: #D4D4D4;
+}
+
+.banner p {
+  color: #D4D4D4;
 }
 
 .jammies {
+  /*color: #C9ACB2;*/
   color: #D4D4D4;
 }
 
@@ -82,13 +89,15 @@ form div {
   padding: 0px 30px;
   display: flex;
   align-items: center;
+  /*justify-content: flex-start;*/
   justify-content: space-between;
   /*change this back later*/
 
    /*background-color: #EFF5FF;*/
-   background-color: #D4D4D4;
-   border-bottom-left-radius: 5px;
-   border-bottom-right-radius: 5px;
+   background-color: #C9ACB2;
+
+   border-bottom-left-radius: 7px;
+   border-bottom-right-radius: 7px;
    transition-timing-function: ease;
    transition-duration: 500ms;
 }
@@ -111,20 +120,18 @@ form div {
 .navbar-item {
   cursor: pointer;
   padding: 0 20px;
-  padding-right: 20px;
-  /*color: #312A27;*/
+  z-index: 10;
+  /*padding-right: 20px;*/
 }
 
 /* Navbar link */
 .navbar-link {
-  /*color: #616668;*/
-  /*color: #20657F;*/
   color: #312A27;
   font-size: 14px;
   font-family: "Roboto";
 }
 .navbar-link:hover {
-  color: #da552f;
+  color: #8B1D2B;
   text-decoration: none;
 }
 
@@ -147,7 +154,8 @@ form div {
 .card {
   height: 250px;
   width: 250px;
-  color: purple;
+  /*color: #8B1D2B;*/
+  color: #312A27;
   margin-bottom: 10px;
   text-align: left;
   text-decoration: none;
