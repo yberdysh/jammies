@@ -35,6 +35,14 @@ form div {
   margin-top: 300px;
 }
 
+.browse-button {
+  background-color: #8B1D2B;
+}
+
+.jammies {
+  color: #D4D4D4;
+}
+
 .selectedJam {
   margin-top: 70px;
 }
@@ -77,7 +85,8 @@ form div {
   justify-content: space-between;
   /*change this back later*/
 
-   background-color: #EFF5FF;
+   /*background-color: #EFF5FF;*/
+   background-color: #D4D4D4;
    border-bottom-left-radius: 5px;
    border-bottom-right-radius: 5px;
    transition-timing-function: ease;
@@ -103,12 +112,14 @@ form div {
   cursor: pointer;
   padding: 0 20px;
   padding-right: 20px;
+  /*color: #312A27;*/
 }
 
 /* Navbar link */
 .navbar-link {
-  color: #616668;
-  color: #20657F;
+  /*color: #616668;*/
+  /*color: #20657F;*/
+  color: #312A27;
   font-size: 14px;
   font-family: "Roboto";
 }
