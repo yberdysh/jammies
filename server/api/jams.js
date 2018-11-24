@@ -4,7 +4,7 @@ module.exports = router
 
 router.get('/', async (req, res, next) => {
   try {
-    const jams = await Jam.findAll({})
+    let jams = await Jam.findAll({})
     res.json(jams)
   } catch(err) {
     next(err)
