@@ -223,35 +223,35 @@ const reviews = await Promise.all([
       content: "This jam was good but not amazing",
       userId: 3,
       jamId: 1
+    }),
+    Review.create({
+      numStars: 5,
+      content: "This is the greatest jam",
+      userId: 1,
+      jamId: 2
+    }),
+    Review.create({
+      numStars: 5,
+      content: "This is my favorite Jam",
+      userId: 2,
+      jamId: 2
+    }),
+    Review.create({
+      numStars: 4,
+      content: "This is an ok jam",
+      userId: 3,
+      jamId: 2
+    }),
+    Review.create({
+      numStars: 4,
+      content: "This is a good jam",
+      userId: 6,
+      jamId: 2
     })
-    //     Review.create({
-    //   numStars: 5,
-    //   content: "This is my favorite Jam",
-    //   user_id: 1,
-    //   jam_id: 1
-    // }),
-    //       Review.create({
-    //   numStars: 5,
-    //   content: "This is my favorite Jam",
-    //   user_id: 1,
-    //   jam_id: 1
-    // }),
-    //         Review.create({
-    //   numStars: 5,
-    //   content: "This is my favorite Jam",
-    //   user_id: 1,
-    //   jam_id: 1
-    // }),
-    //           Review.create({
-    //   numStars: 5,
-    //   content: "This is my favorite Jam",
-    //   user_id: 1,
-    //   jam_id: 1
-    // }),
     //             Review.create({
     //   numStars: 5,
     //   content: "This is my favorite Jam",
-    //   user_id: 1,
+    //   userId: 1,
     //   jam_id: 1
     // }),
     //               Review.create({
