@@ -10,11 +10,13 @@ export class SelectedJam extends Component {
 
     render(){
       const {selectedJam} = this.props
+      console.log("selectedJam", selectedJam)
       return (
         <div className="selectedJam">
           <h1>{selectedJam.name}</h1>
           <img src={selectedJam.image} alt=""/>
           <p>{selectedJam.description}</p>
+          <h2>Reviews: {selectedJam.reviews.map(review => <Review />)}</h2>
         </div>
       );
     }
