@@ -1,5 +1,7 @@
 const Sequelize = require('Sequelize')
 const db = require('../db')
+const _ = require('lodash')
+// const {Review} = require('./review')
 
 const Jam = db.define('jam', {
   price: {
@@ -20,30 +22,36 @@ const Jam = db.define('jam', {
     defaultValue: 0,
     validate: {min: 0}
   },
-  favorites: {
-    type: Sequelize.INTEGER,
-    validate: {min: 0},
-    defaultValue: 0
-  },
   description: {
     type: Sequelize.TEXT,
     notEmpty: true,
     notNull: true
   },
-  reviews: {
-    type: Sequelize.INTEGER,
-    defaultValue: 0,
-    validate: {min: 0}
-  },
   numStars: {
-    type: Sequelize.INTEGER,
-    defaultValue: 0,
-    validate: {min: 0}
+    type: Sequelize.DECIMAL,
+    defaultValue: 0
   },
   image: {
     type: Sequelize.STRING
   }
-})
+  })
+
+// Jam.prototype.averageStars = async function(){
+//   const reviews = await Review.findAll({
+//     where: {jamId: this.id}
+//   })
+
+//   if (reviews.length){
+//     const count = reviews.length
+//     const sum = reviews.reduce((accum, currentVal) => {
+//       return accum + currentVal.numStars
+//     }, 0)
+//     const average = _.round(sum/count, 1)
+//     return average
+//   } else {
+//     return 0;
+//   }
+// }
 
 module.exports = Jam
 
