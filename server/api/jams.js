@@ -5,7 +5,7 @@ module.exports = router
 
 router.get('/', async (req, res, next) => {
   try {
-    let jams = await Jam.findAll({})
+    let jams = await Jam.findAll({include: [Review]})
     res.json(jams)
   } catch(err) {
     next(err)
@@ -17,7 +17,8 @@ router.get('/:id', async (req, res, next) => {
     const jams = await Jam.find({
       where: {
         id: req.params.id
-      }
+      },
+      include: [Review]
     })
     res.json(jams)
   } catch(err) {
@@ -25,15 +26,3 @@ router.get('/:id', async (req, res, next) => {
   }
 })
 
-router.get('/:id/reviews', async (req, res, next) => {
-  try {
-    let reviews = await Review.findAll({
-      where: {
-        jamId: req.params.id
-      }
-    })
-    res.json(reviews)
-  } catch(err) {
-    next(err)
-  }
-})
