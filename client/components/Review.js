@@ -1,17 +1,26 @@
 import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import _ from 'lodash'
 
 
 function Review({review}) {
   const countStars = function(numStars){
-    // this countStars function will only include whole numbers since it's
-    // num stars from review, and users can only give whole numbers in review
+    const solidStars = numStars
+    const emptyStars = 5 - numStars
+    let iconsToRender = [];
+    _.times(solidStars, () => {
+      iconsToRender.push(<i className="fas fa-star"/>)
+    });
+    _.times(emptyStars, () => {
+      iconsToRender.push(<i class="far fa-star"/>)
+    });
+    console.log('icons to render', iconsToRender)
+    return iconsToRender
   }
-  console.log("count stars:", countStars(review.numStars))
 
     return (
       <div>{review.content}
-        <i className="fas fa-star"/>
+        {countStars(review.numStars)}
       </div>
     );
 }
