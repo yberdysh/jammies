@@ -5,8 +5,9 @@ import {reviewStars} from '../utilFuncs/starCalc'
 
 function Review({review}) {
     return (
-      <div>{review.content}
-        {reviewStars(review.numStars)}
+      <div>
+        <p>{reviewStars(review.numStars)}</p>
+        <p>{review.content}</p>
       </div>
     );
 }

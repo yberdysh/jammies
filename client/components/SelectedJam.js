@@ -24,7 +24,8 @@ export class SelectedJam extends Component {
             <p>{selectedJam.description}</p>
           </div>
           <div className="stars-reviews">
-            <h2>Reviews: {selectedJam.reviews && selectedJam.reviews.map(review => <Review key={review.id} review={review}/>)}</h2>
+            <h4>Reviews: </h4>
+            {selectedJam.reviews && selectedJam.reviews.map(review => <Review key={review.id} review={review}/>)}
           </div>
         </div>
         </div>
