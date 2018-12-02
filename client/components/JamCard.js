@@ -17,7 +17,7 @@ export class JamCard extends Component {
         </Link>
           <Card.Content>
             <Card.Header>{jam.name}</Card.Header>
-            <Card.Meta>{starsArray}</Card.Meta>
+            <Card.Meta>{starsArray}({jam.reviews.length})</Card.Meta>
             <Card.Meta>{`$${jam.price}`}</Card.Meta>
           </Card.Content>
         </Card>

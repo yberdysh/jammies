@@ -15,11 +15,14 @@ export class SelectedJam extends Component {
       const {selectedJam} = this.props
       return (
         <div className="selectedJam">
-          <h1>{selectedJam.name}</h1>
-          {selectedJam.numStars && jamStars(selectedJam.numStars)}
-          <img src={selectedJam.image} alt=""/>
-          <p>{selectedJam.description}</p>
-          <h2>Reviews: {selectedJam.reviews && selectedJam.reviews.map(review => <Review key={review.id} review={review}/>)}</h2>
+          <div className="jam-img-description">
+            <h1>{selectedJam.name}</h1>
+            <p>{selectedJam.numStars && jamStars(selectedJam.numStars)}({selectedJam.reviews && selectedJam.reviews.length})</p>
+            <img src={selectedJam.image} alt=""/>
+            <h4>Description: </h4>
+            <p>{selectedJam.description}</p>
+            <h2>Reviews: {selectedJam.reviews && selectedJam.reviews.map(review => <Review key={review.id} review={review}/>)}</h2>
+            </div>
         </div>
       );
     }

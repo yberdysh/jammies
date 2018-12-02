@@ -50,9 +50,27 @@ form div {
   color: #D4D4D4;
 }
 
+/*selected Jam*/
 .selectedJam {
-  margin-top: 70px;
+  margin: 20px;
+  display: flex;
+  justify-content: flex-start;
 }
+
+.jam-img-description {
+/*  height: 500px;
+  width: 700px;*/
+  overflow-x: scroll;
+}
+
+.jam-img-description img {
+    width: 100%;
+    height: auto;
+    max-width: 600px;
+    text-align: center;
+}
+
+
 /*banner*/
 .banner {
   color: white;
