@@ -36,8 +36,6 @@ export class SelectedJam extends Component {
 
     render(){
       const {selectedJam} = this.props
-      // selectedJam.numStars && this.countStars(selectedJam.numStars)
-      // console.log("selectedJam stars func", this.countStars)
       return (
         <div className="selectedJam">
           <h1>{selectedJam.name}</h1>

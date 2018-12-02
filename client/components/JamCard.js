@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux'
-// import { Card, Image } from 'semantic-ui-react';
 import {Link} from 'react-router-dom'
 import { Card, Image } from 'semantic-ui-react'
 import {times} from 'lodash';
-// import {Grid, Col, Row} from 'react-bootstrap'
 
 export class JamCard extends Component {
 
