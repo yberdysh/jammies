@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux'
+import {countStars} from '../store'
 import {Link} from 'react-router-dom'
 import { Card, Image } from 'semantic-ui-react'
 import {times} from 'lodash';
@@ -29,8 +30,11 @@ export class JamCard extends Component {
   }
 
   render() {
+    console.log("COUNT STARS METHOD", countStars)
     const { jam } = this.props
+    console.log("PROPS", jam)
     const starsArray = jam.numStars && this.countStars(jam.numStars)
+    // const starsArray = jam.numStars && this.props.countStars(jam.numStars)
     return (
       <Card>
         <Link to={`/jams/${jam.id}`}>
@@ -45,4 +49,5 @@ export class JamCard extends Component {
     )
   }
 }
+
 

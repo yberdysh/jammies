@@ -4,7 +4,7 @@ import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
 import {fetchAllJams} from '../store'
 import { Grid, Menu } from 'semantic-ui-react'
-import {JamCard} from './JamCard'
+import JamCard from './JamCard'
 import {Banner} from './Banner'
 
 
