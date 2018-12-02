@@ -63,7 +63,7 @@ handleScroll = () => {
     } else {
         this.setState({isHide: true})
     }
-  // console.log(this.state.isHide)
+
   //   const hidden = this.state.isHide
   //   this.setState({isHide: !hidden})
       // considering removing this set timeout due to modal dissappearing, () => setTimeout(() => this.setState({isHide: true}), 10000))
