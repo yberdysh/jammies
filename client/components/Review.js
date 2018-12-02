@@ -14,7 +14,6 @@ function Review({review}) {
     _.times(emptyStars, () => {
       iconsToRender.push(<i key={++key} className="far fa-star"/>)
     });
-    console.log('icons to render', iconsToRender)
     return iconsToRender
   }
 

@@ -12,15 +12,29 @@ export class SelectedJam extends Component {
   countStars = (numStars) => {
     // function for determining num stars for a jam based on reviews
     // this will include decimals
-    console.log(numStars)
-    const wholeNum = numStars.toString().slice(0, 1)
-    const decimal = numStars - parseInt(wholeNum)
+    // console.log("numStars", numStars)
+    // const wholeNum = numStars.toString().slice(0, 1)
+    // const decimal = numStars - parseInt(wholeNum)
   }
+
+  // const countStars = function(numStars){
+  //   const solidStars = numStars
+  //   const emptyStars = 5 - numStars
+  //   let key = 0;
+  //   let iconsToRender = [];
+  //   _.times(solidStars, () => {
+  //     iconsToRender.push(<i key={++key} className="fas fa-star"/>)
+  //   });
+  //   _.times(emptyStars, () => {
+  //     iconsToRender.push(<i key={++key} className="far fa-star"/>)
+  //   });
+  //   return iconsToRender
+  // }
 
     render(){
       const {selectedJam} = this.props
-      // console.log("selecetedJam")
-      console.log("selectedJam", selectedJam)
+      // console.log("selectedJam", selectedJam);
+      // console.log("selectedJam stars func", this.countStars)
       return (
         <div className="selectedJam">
           <h1>{selectedJam.name}</h1>
