@@ -23,3 +23,16 @@ export const countStars = (numStars) => {
     return starsArray
   }
 
+export const reviewStars = function(numStars){
+    const solidStars = numStars
+    const emptyStars = 5 - numStars
+    let key = 0;
+    let iconsToRender = [];
+    times(solidStars, () => {
+      iconsToRender.push(<i key={++key} className="fas fa-star"/>)
+    });
+    times(emptyStars, () => {
+      iconsToRender.push(<i key={++key} className="far fa-star"/>)
+    });
+    return iconsToRender
+  }
