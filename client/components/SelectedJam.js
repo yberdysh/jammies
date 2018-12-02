@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import {fetchSingleJam} from '../store'
 import Review from './Review'
+import {times} from 'lodash';
+
+// consider refactoring numStars method or putting on backend
 
 export class SelectedJam extends Component {
     componentDidMount(){
@@ -10,34 +13,35 @@ export class SelectedJam extends Component {
     }
 
   countStars = (numStars) => {
-    // function for determining num stars for a jam based on reviews
-    // this will include decimals
-    // console.log("numStars", numStars)
-    // const wholeNum = numStars.toString().slice(0, 1)
-    // const decimal = numStars - parseInt(wholeNum)
+    const starsArray = []
+    let key = 0;
+    let wholeNum = +numStars.toString().slice(0, 1)
+    let emptyStars = 0
+    times(wholeNum, () => starsArray.push(<i key={++key} className="fas fa-star"/>))
+    const decimal = numStars - wholeNum
+    console.log("decimal", decimal)
+    if (decimal > 0.2 && decimal < 0.8){
+      starsArray.push(<i key={++key} className="fas fa-star-half-alt"/>)
+      wholeNum = Math.ceil(numStars)
+    } else if (decimal >= 0.8){
+      starsArray.push(<i key={++key} className="fas fa-star"/>)
+      wholeNum = Math.ceil(numStars)
+    } else {
+      wholeNum = Math.floor(numStars)
+    }
+    emptyStars = 5 - wholeNum
+    times(emptyStars, () => starsArray.push(<i key={++key} className="far fa-star"/>))
+    return starsArray
   }
-
-  // const countStars = function(numStars){
-  //   const solidStars = numStars
-  //   const emptyStars = 5 - numStars
-  //   let key = 0;
-  //   let iconsToRender = [];
-  //   _.times(solidStars, () => {
-  //     iconsToRender.push(<i key={++key} className="fas fa-star"/>)
-  //   });
-  //   _.times(emptyStars, () => {
-  //     iconsToRender.push(<i key={++key} className="far fa-star"/>)
-  //   });
-  //   return iconsToRender
-  // }
 
     render(){
       const {selectedJam} = this.props
-      // console.log("selectedJam", selectedJam);
+      // selectedJam.numStars && this.countStars(selectedJam.numStars)
       // console.log("selectedJam stars func", this.countStars)
       return (
         <div className="selectedJam">
           <h1>{selectedJam.name}</h1>
+          {selectedJam.numStars && this.countStars(selectedJam.numStars)}
           <img src={selectedJam.image} alt=""/>
           <p>{selectedJam.description}</p>
           <h2>Reviews: {selectedJam.reviews && selectedJam.reviews.map(review => <Review key={review.id} review={review}/>)}</h2>
