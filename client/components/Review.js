@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import _ from 'lodash'
+import {times} from 'lodash'
 
 
 function Review({review}) {
@@ -8,10 +8,10 @@ function Review({review}) {
     const emptyStars = 5 - numStars
     let key = 0;
     let iconsToRender = [];
-    _.times(solidStars, () => {
+    times(solidStars, () => {
       iconsToRender.push(<i key={++key} className="fas fa-star"/>)
     });
-    _.times(emptyStars, () => {
+    times(emptyStars, () => {
       iconsToRender.push(<i key={++key} className="far fa-star"/>)
     });
     return iconsToRender
