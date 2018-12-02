@@ -46,13 +46,19 @@ form div {
 }
 
 .jammies {
-  /*color: #C9ACB2;*/
+  /*/*color: #C9ACB2;*/*/
   color: #D4D4D4;
 }
 
 /*selected Jam*/
 .show-page {
   margin: 20px;
+}
+
+.show-page h1, h3 {
+  font-family: 'Montez', cursive;
+  color: #D4D4D4;
+  font-weight: bold;
 }
 
 @media screen and (min-width: 768px) {
@@ -75,6 +81,7 @@ form div {
   overflow-x: scroll;
 }
 
+
 .jam-img img {
     width: 100%;
     height: auto;
@@ -84,6 +91,7 @@ form div {
 
 .fas, .far {
   color: #8B1D2B;
+  /*color: #D4D4D4;*/
 }
 
 
