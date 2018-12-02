@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux'
-import {countStars} from '../utilFuncs/starCalc'
+import {jamStars} from '../utilFuncs/starCalc'
 import {Link} from 'react-router-dom'
 import { Card, Image } from 'semantic-ui-react'
 import {times} from 'lodash';
@@ -9,7 +9,7 @@ export class JamCard extends Component {
 
   render() {
     const { jam } = this.props
-    const starsArray = jam.numStars && countStars(jam.numStars)
+    const starsArray = jam.numStars && jamStars(jam.numStars)
     return (
       <Card>
         <Link to={`/jams/${jam.id}`}>

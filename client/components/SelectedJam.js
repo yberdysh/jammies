@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import {times} from 'lodash';
 import {fetchSingleJam} from '../store'
 import Review from './Review'
-import {countStars} from '../utilFuncs/starCalc'
+import {jamStars} from '../utilFuncs/starCalc'
 
 export class SelectedJam extends Component {
     componentDidMount(){
@@ -16,7 +16,7 @@ export class SelectedJam extends Component {
       return (
         <div className="selectedJam">
           <h1>{selectedJam.name}</h1>
-          {selectedJam.numStars && countStars(selectedJam.numStars)}
+          {selectedJam.numStars && jamStars(selectedJam.numStars)}
           <img src={selectedJam.image} alt=""/>
           <p>{selectedJam.description}</p>
           <h2>Reviews: {selectedJam.reviews && selectedJam.reviews.map(review => <Review key={review.id} review={review}/>)}</h2>

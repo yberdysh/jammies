@@ -1,7 +1,7 @@
 import React from 'react'
 import {times} from 'lodash';
 
-export const countStars = (numStars) => {
+export const jamStars = (numStars) => {
     const starsArray = []
     let key = 0;
     let wholeNum = +numStars.toString().slice(0, 1)
