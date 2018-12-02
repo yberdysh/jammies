@@ -17,11 +17,11 @@ export class SelectedJam extends Component {
         <div className="selectedJam">
           <div className="jam-img">
             <h1>{selectedJam.name}</h1>
+            <p>{selectedJam.numStars && jamStars(selectedJam.numStars)}({selectedJam.reviews && selectedJam.reviews.length})</p>
             <img src={selectedJam.image} alt=""/>
             <h2>Reviews: {selectedJam.reviews && selectedJam.reviews.map(review => <Review key={review.id} review={review}/>)}</h2>
           </div>
           <div className="stars-reviews">
-            <p>{selectedJam.numStars && jamStars(selectedJam.numStars)}({selectedJam.reviews && selectedJam.reviews.length})</p>
             <h4>Description: </h4>
             <p>{selectedJam.description}</p>
           </div>

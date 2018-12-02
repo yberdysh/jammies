@@ -51,26 +51,36 @@ form div {
 }
 
 /*selected Jam*/
-.selectedJam {
-  margin: 20px;
-  padding: 20px;
-  max-width: 600px;
-  display: flex;
-  justify-content: space-evenly;
+
+@media screen and (min-width: 768px) {
+  .selectedJam {
+    margin: 20px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+  }
+
 }
 
+
 .jam-img {
-  /*height: 500px;*/
-  width: 700px;
+/*  height: 500px;
+  width: 700px;*/
   /*overflow-x: scroll;*/
+  margin: 20px;
 }
-/*
+
+.stars-reviews {
+  margin: 20px;
+}
+
 .jam-img img {
     width: 100%;
     height: auto;
     max-width: 600px;
-    text-align: center;
-}*/
+    /*text-align: center;*/
+}
+
 
 
 /*banner*/
