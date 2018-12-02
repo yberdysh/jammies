@@ -82,6 +82,10 @@ form div {
     border-radius: 7px;
 }
 
+.fas, .far {
+  color: #8B1D2B;
+}
+
 
 
 /*banner*/
