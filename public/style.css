@@ -60,15 +60,11 @@ form div {
     display: flex;
     justify-content: flex-start;
   }
-
 }
 
 
 @media screen and (min-width: 768px) {
   .jam-img {
-    /*  height: 500px;
-      width: 700px;*/
-      /*overflow-x: scroll;*/
       margin-right: 20px;
       min-width: 500px;
       max-width: 600px;
