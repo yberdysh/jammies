@@ -1,7 +1,6 @@
 const Sequelize = require('Sequelize')
 const db = require('../db')
 const _ = require('lodash')
-// const {Review} = require('./review')
 
 const Jam = db.define('jam', {
   price: {
@@ -34,27 +33,8 @@ const Jam = db.define('jam', {
   image: {
     type: Sequelize.STRING
   }
-  })
-
-// Jam.prototype.averageStars = async function(){
-//   const reviews = await Review.findAll({
-//     where: {jamId: this.id}
-//   })
-
-//   if (reviews.length){
-//     const count = reviews.length
-//     const sum = reviews.reduce((accum, currentVal) => {
-//       return accum + currentVal.numStars
-//     }, 0)
-//     const average = _.round(sum/count, 1)
-//     return average
-//   } else {
-//     return 0;
-//   }
-// }
+})
 
 module.exports = Jam
 
-// materials for another table
-// reviews for another table
 
