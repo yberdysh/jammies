@@ -50,9 +50,44 @@ form div {
   color: #D4D4D4;
 }
 
-.selectedJam {
-  margin-top: 70px;
+/*selected Jam*/
+.show-page {
+  margin: 20px;
 }
+
+@media screen and (min-width: 768px) {
+  .selectedJam {
+  display: flex;
+  justify-content: space-evenly;
+  }
+
+}
+
+
+@media screen and (min-width: 768px) {
+  .jam-img {
+    /*  height: 500px;
+      width: 700px;*/
+      /*overflow-x: scroll;*/
+      margin-right: 20px;
+      min-width: 500px;
+      max-width: 600px;
+  }
+}
+
+.stars-reviews {
+  overflow-x: scroll;
+}
+
+.jam-img img {
+    width: 100%;
+    height: auto;
+    max-width: 600px;
+    /*text-align: center;*/
+}
+
+
+
 /*banner*/
 .banner {
   color: white;
