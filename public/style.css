@@ -57,8 +57,8 @@ form div {
 
 @media screen and (min-width: 768px) {
   .selectedJam {
-  display: flex;
-  justify-content: space-evenly;
+    display: flex;
+    justify-content: flex-start;
   }
 
 }
