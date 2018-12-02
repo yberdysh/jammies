@@ -51,27 +51,32 @@ form div {
 }
 
 /*selected Jam*/
+.show-page {
+  margin: 20px;
+}
 
 @media screen and (min-width: 768px) {
   .selectedJam {
-    margin: 20px;
-    padding: 20px;
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-evenly;
   }
 
 }
 
 
-.jam-img {
-/*  height: 500px;
-  width: 700px;*/
-  /*overflow-x: scroll;*/
-  margin: 20px;
+@media screen and (min-width: 768px) {
+  .jam-img {
+    /*  height: 500px;
+      width: 700px;*/
+      /*overflow-x: scroll;*/
+      margin-right: 20px;
+      min-width: 500px;
+      max-width: 600px;
+  }
 }
 
 .stars-reviews {
-  margin: 20px;
+  overflow-x: scroll;
 }
 
 .jam-img img {
