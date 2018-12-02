@@ -46,7 +46,7 @@ form div {
 }
 
 .jammies {
-  /*color: #C9ACB2;*/
+  /*/*color: #C9ACB2;*/*/
   color: #D4D4D4;
 }
 
@@ -55,20 +55,22 @@ form div {
   margin: 20px;
 }
 
+.show-page h1, h3 {
+  font-family: 'Montez', cursive;
+  color: #D4D4D4;
+  font-weight: bold;
+}
+
 @media screen and (min-width: 768px) {
   .selectedJam {
-  display: flex;
-  justify-content: space-evenly;
+    display: flex;
+    justify-content: flex-start;
   }
-
 }
 
 
 @media screen and (min-width: 768px) {
   .jam-img {
-    /*  height: 500px;
-      width: 700px;*/
-      /*overflow-x: scroll;*/
       margin-right: 20px;
       min-width: 500px;
       max-width: 600px;
@@ -79,11 +81,17 @@ form div {
   overflow-x: scroll;
 }
 
+
 .jam-img img {
     width: 100%;
     height: auto;
     max-width: 600px;
-    /*text-align: center;*/
+    border-radius: 7px;
+}
+
+.fas, .far {
+  color: #8B1D2B;
+  /*color: #D4D4D4;*/
 }
 
 

@@ -20,11 +20,12 @@ export class SelectedJam extends Component {
           <div className="selectedJam">
           <div className="jam-img">
             <img src={selectedJam.image} alt=""/>
-            <h4>Description: </h4>
+            <h3>Description: </h3>
             <p>{selectedJam.description}</p>
           </div>
           <div className="stars-reviews">
-            <h2>Reviews: {selectedJam.reviews && selectedJam.reviews.map(review => <Review key={review.id} review={review}/>)}</h2>
+            <h3>Reviews: </h3>
+            {selectedJam.reviews && selectedJam.reviews.map(review => <Review key={review.id} review={review}/>)}
           </div>
         </div>
         </div>
