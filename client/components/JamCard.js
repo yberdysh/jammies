@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux'
-import {jamStars} from '../utilFuncs/starCalc'
+import {jamStars, formatNumStars} from '../utilFuncs/starCalc'
 import {Link} from 'react-router-dom'
 import { Card, Image } from 'semantic-ui-react'
 import {times} from 'lodash';
@@ -16,9 +16,11 @@ export class JamCard extends Component {
           <Image src={jam.image} />
         </Link>
           <Card.Content>
-            <Card.Header>{jam.name}</Card.Header>
-            <Card.Meta>{starsArray}({jam.reviews.length})</Card.Meta>
-            <Card.Meta>{`$${jam.price}`}</Card.Meta>
+            <div className="jamCard">
+              <Card.Header className="jamName">{jam.name}</Card.Header>
+              <Card.Meta >{starsArray}({jam.reviews.length} reviews {formatNumStars(jam.numStars)})</Card.Meta>
+              <Card.Meta>{`$${jam.price}`}</Card.Meta>
+              </div>
           </Card.Content>
         </Card>
     )

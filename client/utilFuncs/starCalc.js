@@ -36,3 +36,15 @@ export const reviewStars = function(numStars){
     });
     return iconsToRender
   }
+
+  export const formatNumStars = function(numStars){
+    // console.log(numStars)
+    const str = numStars.toString()
+    let finalNum;
+    if (str.includes(".")){
+      return numStars
+    } else {
+      finalNum = str + ".0"
+      return finalNum
+    }
+  }
