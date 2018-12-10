@@ -4,22 +4,13 @@ const _ = require('lodash')
 
 const Jam = db.define('jam', {
   price: {
-    type: Sequelize.DECIMAL,
-    validate: {
-      min: 0.01,
-      isDecimal: true
-    }
+    type: Sequelize.STRING,
   },
   name: {
     type: Sequelize.STRING,
     notNull: true,
     notEmpty: true,
     validate: { len: [3, 50] }
-  },
-  numInStock: {
-    type: Sequelize.INTEGER,
-    defaultValue: 0,
-    validate: {min: 0}
   },
   description: {
     type: Sequelize.TEXT,
