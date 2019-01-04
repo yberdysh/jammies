@@ -207,6 +207,198 @@ const reviews = await Promise.all([
       content: "This is a good jam",
       userId: 6,
       jamId: 2
+    }),
+    Review.create({
+      numStars: 5,
+      content: "This is one of my favorite jams of all time. Will definitely be ordering again.",
+      userId: 3,
+      jamId: 3
+    }),
+    Review.create({
+      numStars: 5,
+      content: "I really loved this homemade jam, and will only be ordering homemade from now on.",
+      userId: 6,
+      jamId: 3
+    }),
+    Review.create({
+      numStars: 2,
+      content: "Wasn't really into it",
+      userId: 6,
+      jamId: 3
+    }),
+    Review.create({
+      numStars: 5,
+      content: "Super delicious. 5 stars.",
+      userId: 6,
+      jamId: 3
+    }),
+    Review.create({
+      numStars: 5,
+      content: "This one is super delicious.",
+      userId: 6,
+      jamId: 4
+    }),
+    Review.create({
+      numStars: 5,
+      content: "Will be coming back for more.",
+      userId: 6,
+      jamId: 4
+    }),
+    Review.create({
+      numStars: 5,
+      content: "Will be ordering again",
+      userId: 6,
+      jamId: 4
+    }),
+    Review.create({
+      numStars: 3,
+      content: "Kind of weird",
+      userId: 6,
+      jamId: 5
+    }),
+    Review.create({
+      numStars: 5,
+      content: "Phenomenal",
+      userId: 6,
+      jamId: 5
+    }),
+    Review.create({
+      numStars: 4,
+      content: "This is a good jam",
+      userId: 6,
+      jamId: 6
+    }),
+    Review.create({
+      numStars: 5,
+      content: "This is a great jam",
+      userId: 6,
+      jamId: 7
+    }),
+    Review.create({
+      numStars: 5,
+      content: "This is an excellent jam",
+      userId: 6,
+      jamId: 7
+    }),
+    Review.create({
+      numStars: 4,
+      content: "This is ok- not super amazing",
+      userId: 6,
+      jamId: 7
+    }),
+    Review.create({
+      numStars: 5,
+      content: "This is a great jam",
+      userId: 6,
+      jamId: 8
+    }),
+    Review.create({
+      numStars: 4,
+      content: "This is an ok jam",
+      userId: 6,
+      jamId: 8
+    }),
+    Review.create({
+      numStars: 5,
+      content: "This is an excellent jam",
+      userId: 6,
+      jamId: 9
+    }),
+    Review.create({
+      numStars: 5,
+      content: "This is a great jam",
+      userId: 6,
+      jamId: 9
+    }),
+    Review.create({
+      numStars: 3,
+      content: "Nothing special",
+      userId: 6,
+      jamId: 10
+    }),
+    Review.create({
+      numStars: 5,
+      content: "Great- will be ordering again.",
+      userId: 6,
+      jamId: 10
+    }),
+    Review.create({
+      numStars: 5,
+      content: "This is a great jam",
+      userId: 6,
+      jamId: 11
+    }),
+    Review.create({
+      numStars: 5,
+      content: "This is a great jam",
+      userId: 6,
+      jamId: 12
+    }),
+    Review.create({
+      numStars: 5,
+      content: "This is a great jam",
+      userId: 6,
+      jamId: 13
+    }),
+    Review.create({
+      numStars: 5,
+      content: "This is a great jam",
+      userId: 6,
+      jamId: 14
+    }),
+        Review.create({
+      numStars: 5,
+      content: "This is a great jam",
+      userId: 6,
+      jamId: 14
+    }),
+            Review.create({
+      numStars: 5,
+      content: "This is a great jam",
+      userId: 6,
+      jamId: 14
+    }),
+    Review.create({
+      numStars: 5,
+      content: "This is a great jam",
+      userId: 6,
+      jamId: 15
+    }),
+    Review.create({
+      numStars: 5,
+      content: "This is a great jam",
+      userId: 6,
+      jamId: 16
+    }),
+    Review.create({
+      numStars: 5,
+      content: "This is a great jam",
+      userId: 6,
+      jamId: 17
+    }),
+    Review.create({
+      numStars: 5,
+      content: "This is a great jam",
+      userId: 6,
+      jamId: 18
+    }),
+    Review.create({
+      numStars: 5,
+      content: "This is a great jam",
+      userId: 6,
+      jamId: 19
+    }),
+   Review.create({
+      numStars: 5,
+      content: "This is a great jam",
+      userId: 6,
+      jamId: 20
+    }),
+    Review.create({
+      numStars: 5,
+      content: "This is a great jam",
+      userId: 6,
+      jamId: 21
     })
   ])
 
