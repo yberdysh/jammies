@@ -16,7 +16,7 @@ export class Banner extends Component {
   <div className="banner-content">
     <h1 className="jammies">Jammies</h1>
     <p>Buy only the best home-made jam</p>
-    <a className="btn btn-primary btn-lg browse-button" onClick={this.smoothScroll}>Start now</a>
+    <a className="btn btn-primary btn-lg browse-button" onClick={this.smoothScroll}>Shop Now</a>
   </div>
 </div>
     );
