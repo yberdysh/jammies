@@ -74,7 +74,7 @@ handleScroll = () => {
           return <div></div>
       } else {
           return (
-            <div className="navigation sticky">
+            <div className="navigation sticky hidden-xs hidden-sm">
             <a href="/" className="navbar-logo">
               <img src="https://static.thenounproject.com/png/215294-200.png" alt="logo"/>
             </a>
