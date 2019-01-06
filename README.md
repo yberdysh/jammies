@@ -20,8 +20,9 @@ _Please note that the site does not sell real jam, but is merely a mock of an e-
 - navigate to http://localhost:8080/jams
 
 ## Browse the available jams 
-![browse](https://snag.gy/OeqajM.jpg)
+
 <img src="https://media.giphy.com/media/5b0l9r6rihtJXEUwi4/giphy.gif" width="480" height="228" />
+![browse](https://snag.gy/OeqajM.jpg)
 
 ## Click on a jam to see more info and reviews
 
