@@ -15,6 +15,10 @@ const CartItem = require('./cartItem.js')
  Review.belongsTo(User)
  Jam.hasMany(Review, { onDelete: 'cascade' })
  User.hasMany(Review, { onDelete: 'cascade' })
+ Order.hasMany(CartItem)
+ CartItem.belongsTo(Order)
+ Order.belongsTo(User)
+
 
 
 /**
